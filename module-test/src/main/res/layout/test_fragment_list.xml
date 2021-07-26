@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.test.ui.viewmodel.ListViewModel" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="线性布局"
+                android:textColor="@color/textColorRed"
+                android:textSize="@dimen/sp20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.lineAdapter}"
+                layoutManager="@{LayoutManagers.linear()}"
+                lineManager="@{LineManagers.divider(@color/divider,1)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="网格布局"
+                android:textColor="@color/textColorRed"
+                android:textSize="@dimen/sp20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.grideAdapter}"
+                layoutManager="@{LayoutManagers.grid(4)}"
+                lineManager="@{LineManagers.divider(@color/divider,10)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
+                android:text="瀑布流布局"
+                android:textColor="@color/textColorRed"
+                android:textSize="@dimen/sp20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.staggeredAdapter}"
+                layoutManager="@{LayoutManagers.staggeredGrid(4,LayoutManagers.VERTICAL)}"
+                lineManager="@{LineManagers.staggeredDivider(@color/divider,10)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

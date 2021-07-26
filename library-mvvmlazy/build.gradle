@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //沉浸式框架
+    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    api 'com.github.getActivity:TitleBar:8.6'
+    api 'com.github.fondesa:recycler-view-divider:3.5.0'
+    //dialog框架
+    api 'com.github.kongzue.DialogX:DialogX:0.0.39'
+    //LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力
+    api 'com.jeremyliao:live-event-bus-x:1.7.2'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    // 上拉加载，下拉刷新
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+//    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+    api "org.jetbrains.anko:anko:$anko_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.5.20"
+    //android_x
+    api rootProject.ext.android_x.multidex
+    api rootProject.ext.android_x["appcompat"]
+    api rootProject.ext.android_x["ktx"]
+    api rootProject.ext.android_x["material"]
+    api rootProject.ext.android_x["navigation"]
+    api rootProject.ext.android_x["navigation-fg-ktx"]
+    api rootProject.ext.android_x["navigation-ui"]
+    api rootProject.ext.android_x["navigation-ktx"]
+    //room
+    api rootProject.ext.android_x["room"]
+    api rootProject.ext.android_x["room-ktx"]
+
+    //rxjava
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+    api rootProject.ext.dependencies.rxKotlin
+
+    //rx管理View的生命周期
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["rxlifecycle-components"]) {
+        exclude group: 'com.android.support'
+    }
+    //rxbinding
+    api(rootProject.ext.dependencies.rxbinding) {
+        exclude group: 'com.android.support'
+    }
+    //rx权限请求
+    api(rootProject.ext.dependencies.rxpermissions) {
+        exclude group: 'com.android.support'
+    }
+
+    //network
+    api rootProject.ext.dependencies.okhttp
+    api rootProject.ext.dependencies.retrofit
+
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api 'com.jaeger.statusbarutil:library:1.5.1'
+    //json解析
+    api rootProject.ext.dependencies.gson
+    //glide图片加载库
+    api(rootProject.ext.dependencies.glide) {
+        exclude group: 'com.android.support'
+    }
+
+    kapt rootProject.ext.dependencies["glide-compiler"]
+    //Google LiveData和ViewModel组件
+    api rootProject.ext.android_x["lifecycle-extensions"]
+    kapt rootProject.ext.android_x["lifecycle-compiler"]
+    androidTestImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}

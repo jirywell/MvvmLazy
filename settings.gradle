@@ -1,0 +1,6 @@
+include ':module-sign'
+include ':module-home'
+include ':module-test'
+rootProject.name='快捷框架'
+include ':app', ':library-base', ':library-mvvmlazy'
+

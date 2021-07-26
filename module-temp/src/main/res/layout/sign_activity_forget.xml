@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="forgetVM"
+            type="com.rui.home.ui.viewmodel.ForgetPwdViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_30"
+            android:src="@drawable/sign_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_35"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/close">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:text="设置新密码"
+                android:textColor="#ff222222"
+                android:textSize="23sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_25"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/phone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机号" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/phone_clear"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:src="@drawable/ic_close" />
+
+                <EditText
+                    android:id="@+id/phone_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_toLeftOf="@id/phone_clear"
+                    android:layout_toRightOf="@+id/phone_tv"
+                    android:layout_weight="5"
+                    android:text="@={forgetVM.forgetPhone}"
+                    android:background="@null"
+                    android:hint="请输入手机号码"
+                    android:inputType="phone"
+                    android:textColor="#ff999999"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="#E4E4E4" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_25"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/verify_code_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="验证码" />
+
+                <TextView
+                    android:id="@+id/verify_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:background="@drawable/sign_new_pwd"
+                    android:padding="5dp"
+                    android:enabled="@{forgetVM.isEnabled}"
+                    onClickCommand="@{forgetVM.getVerifyCode}"
+                    android:text="@{forgetVM.num}"
+                    android:textColor="#ffffb100"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/verify_code_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_toLeftOf="@id/verify_code"
+                    android:layout_toRightOf="@+id/verify_code_tv"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:hint="请输入获取的验证码"
+                    android:textColor="#ff999999"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="#E4E4E4" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_27"
+                android:layout_marginEnd="@dimen/dp_25"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pwd_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="密   码" />
+
+                <ImageView
+                    android:id="@+id/show_flag"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:src="@drawable/sign_show_psw_press" />
+
+                <EditText
+                    android:id="@+id/pwd_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_toLeftOf="@id/show_flag"
+                    android:layout_toRightOf="@+id/pwd_tv"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:text="@={forgetVM.pwdtv}"
+                    android:hint="请输入8-16位密码"
+                    android:inputType="textPassword"
+                    android:textColor="#ff999999"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="#E4E4E4" />
+
+            <Button
+                android:id="@+id/verification_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/verification_code_btn"
+                android:enabled="false"
+                android:padding="12dp"
+                android:text="确认"
+                onClickCommand="@{forgetVM.completeRegiter}"
+                android:textColor="#ffffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
