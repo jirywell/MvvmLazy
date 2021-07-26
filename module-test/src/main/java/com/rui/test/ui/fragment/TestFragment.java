@@ -66,10 +66,16 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .navigate(R.id.home_action_testfragment_to_home_paginationfragment);
         }
 
-        public void rvMultiClick() {
+        public void rvPaginationClick() {
             NavHostFragment
                     .findNavController(TestFragment.this)
                     .navigate(R.id.home_action_testfragment_to_home_listfragment);
+        }
+
+        public void rvMutiClick() {
+            NavHostFragment
+                    .findNavController(TestFragment.this)
+                    .navigate(R.id.test_action_testfragment_to_test_mutifragment);
         }
 
         public void errorClick() {

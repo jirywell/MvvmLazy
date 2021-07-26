@@ -12,7 +12,7 @@
             type="com.rui.test.ui.viewmodel.TestViewModel" />
     </data>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -42,8 +42,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:onClick="@{() -> presenter.rvMultiClick()}"
+                android:onClick="@{() -> presenter.rvPaginationClick()}"
                 android:text="列表布局" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="@{() -> presenter.rvMutiClick()}"
+                android:text="多状态页面" />
 
             <Button
                 android:layout_width="match_parent"
@@ -58,6 +65,7 @@
                 android:layout_marginTop="10dp"
                 android:onClick="@{() -> presenter.permissionClick()}"
                 android:text="权限请求" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,5 +74,5 @@
                 android:text="数据库操作" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>

@@ -28,7 +28,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/home_nav_home" />
+            app:navGraph="@navigation/test_nav_home" />
 
     </LinearLayout>
 </layout>

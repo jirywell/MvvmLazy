@@ -23,6 +23,9 @@
         <action
             android:id="@+id/home_action_testfragment_to_home_roomsamplefragment"
             app:destination="@id/home_roomsamplefragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_mutifragment"
+            app:destination="@id/test_mutifragment" />
     </fragment>
     <fragment
         android:id="@+id/bindingfragment"
@@ -40,5 +43,9 @@
         android:id="@+id/home_roomsamplefragment"
         android:name="com.rui.test.ui.fragment.RoomSampleFragment"
         android:label="RoomSampleFragment" />
+    <fragment
+        android:id="@+id/test_mutifragment"
+        android:name="com.rui.test.ui.fragment.MutiFragment"
+        android:label="MutiFragment" />
 
 </navigation>
