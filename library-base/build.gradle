@@ -46,8 +46,6 @@ dependencies {
     api rootProject.ext.dependencies["arouter-api"]
     //banner框架
     api 'com.youth.banner:banner:2.1.0'
-    //SuperTextView
-    api 'com.github.lygttpod:SuperTextView:2.1.6'
     //加载动画框架
     api 'com.wang.avi:library:2.1.3'
     //TabLayout框架
@@ -68,20 +66,16 @@ dependencies {
     api 'liji.library.dev:citypickerview:5.2.4'
     //popwindows框架
     api 'com.lxj:xpopup:2.2.23'
-
-
     api 'com.google.android:flexbox:2.0.1'
     // 评价 图标
     api 'me.zhanghai.android.materialratingbar:library:1.4.0'
     //图表
     api 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    //mqtt框架
-    api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     //微信
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 //倒计时控件
     api 'com.github.iwgang:countdownview:2.1.6'
-    api 'com.github.JavaNoober.BackgroundLibrary:library:1.7.2'
+    api 'com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.3'
     //  友盟分享  基础包
 //    api 'com.umeng.umsdk:common:9.3.3'
 //    api 'com.umeng.umsdk:asms:1.1.4' // asms包依赖(必选)

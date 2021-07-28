@@ -38,6 +38,13 @@ public class PaginationViewModel extends BasePaginationViewModel<DiscoverReposit
         return myAdapter;
     }
 
+    /**
+     * 接口数据格式通常有两种类型
+     * 1.通常有不包含分页信息的,也就是data直接返回list
+     * 2. 携带分页信息的,data包含分页信息和数据list
+     * 根据接口数据类型选择解析方式
+     * @return
+     */
     @Override
     public ListType getDateListType() {
         return ListType.NO_PAGING_INFO;

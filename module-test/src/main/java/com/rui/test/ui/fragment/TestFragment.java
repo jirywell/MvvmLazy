@@ -78,6 +78,12 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .navigate(R.id.test_action_testfragment_to_test_mutifragment);
         }
 
+        public void titleBarClick() {
+            NavHostFragment
+                    .findNavController(TestFragment.this)
+                    .navigate(R.id.test_action_testfragment_to_test_titlebarfragment);
+        }
+
         public void errorClick() {
             Integer.parseInt("你好");
         }
@@ -90,6 +96,12 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
             NavHostFragment
                     .findNavController(TestFragment.this)
                     .navigate(R.id.home_action_testfragment_to_home_roomsamplefragment);
+        }
+
+        public void rxHelperClick() {
+            NavHostFragment
+                    .findNavController(TestFragment.this)
+                    .navigate(R.id.test_action_testfragment_to_test_shapeviewfragment);
         }
     }
 

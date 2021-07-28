@@ -4,12 +4,16 @@ import android.app.Application;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.rui.mvvmlazy.base.BaseViewModel;
+import com.rui.mvvmlazy.binding.viewadapter.recyclerview.DataBindingAdapter;
+import com.rui.mvvmlazy.utils.common.ScreenUtil;
 import com.rui.test.R;
 import com.rui.test.data.DiscoverRepository;
 import com.rui.test.data.bean.JokeInfo;
 import com.rui.test.databinding.TestLayoutItemJokeBinding;
-import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -17,11 +21,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.rui.mvvmlazy.base.BaseViewModel;
-import com.rui.mvvmlazy.binding.viewadapter.recyclerview.DataBindingAdapter;
-import com.rui.mvvmlazy.utils.common.ScreenUtil;
-
 public class ListViewModel extends BaseViewModel<DiscoverRepository> {
+    public MutableLiveData<Integer> type = new MutableLiveData<>(1);
+
     public ListViewModel(@NonNull Application application) {
         super(application);
     }
@@ -30,6 +32,23 @@ public class ListViewModel extends BaseViewModel<DiscoverRepository> {
     public void initData() {
         super.initData();
         List<JokeInfo> list1 = new ArrayList<>();
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
+        list1.add(new JokeInfo("测试一下", "小明"));
         list1.add(new JokeInfo("测试一下", "小明"));
         list1.add(new JokeInfo("测试一下", "小明"));
         list1.add(new JokeInfo("测试一下", "小明"));
@@ -43,8 +62,30 @@ public class ListViewModel extends BaseViewModel<DiscoverRepository> {
         list2.add(new JokeInfo("测试一下", "小明"));
         list2.add(new JokeInfo("测试一下", "小明"));
         list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
+        list2.add(new JokeInfo("测试一下", "小明"));
         grideAdapter.setNewInstance(list2);
         List<JokeInfo> list3 = new ArrayList<>();
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
+        list3.add(new JokeInfo("测试一下", "小明"));
         list3.add(new JokeInfo("测试一下", "小明"));
         list3.add(new JokeInfo("测试一下", "小明"));
         list3.add(new JokeInfo("测试一下", "小明"));
@@ -84,4 +125,7 @@ public class ListViewModel extends BaseViewModel<DiscoverRepository> {
         }
     };
 
+    public void changeType(int typeValue) {
+        type.setValue(typeValue);
+    }
 }

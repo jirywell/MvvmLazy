@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="themeColor" >#2D6BF5</color>
-    <color name="themeRedColor" >#fffe715f</color>
+    <color name="themeColor">#2D6BF5</color>
+    <color name="themeRedColor">#fffe715f</color>
 
     <color name="transparent_40">#20000000</color>  <!-- 透明色 40%-->
     <color name="audio_edit_stroke_color">#fcb701</color>
     <color name="singleColor">#FFF56C52</color>
-    <color name="colorPrimaryDark">#FF2041</color>
-    <color name="colorPrimary">#FF2041</color>
-    <color name="colorAccent">#FF2041</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
     <color name="textColor">#333333</color>
     <color name="textColorCancel">#373737</color>
     <color name="textColorVice">#6C6C6C</color>
@@ -26,7 +26,13 @@
     <color name="smoke_white">#F5F5F5</color>
     <color name="yellow">#FFFF00</color>
     <color name="apptheme">#FF2041</color>
+    <!--red-->
+    <color name="red">#dd0000</color>
+    <!--Pink-->
+    <color name="pink">#FFC0CB</color>
 
+    <!--purple-->
+    <color name="purple">#6844d3</color>
 
     <color name="green">#008000</color>
     <color name="mineGreen">#1AB86C</color>
@@ -43,7 +49,6 @@
     <color name="color_55">#555555</color>
 
 
-
     <color name="text_def">#ff666666</color>
     <color name="text_major">#ff333333</color>
     <color name="text_minor">#ff999999</color>
@@ -53,13 +58,6 @@
     <color name="discover_city_select_side_bar_bg_blue">#FF5091F5</color>
     <color name="mine_item_payment_orange_red">#FF0000</color>
     <color name="mine_suggest_edt_bg_gray">#F8F8F8</color>
-
-
-
-
-
-
-
 
 
     <!---->

@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/testFragment"
         android:name="com.rui.test.ui.fragment.TestFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment">
 
         <action
             android:id="@+id/home_action_testfragment_to_bindingfragment"
@@ -26,6 +26,12 @@
         <action
             android:id="@+id/test_action_testfragment_to_test_mutifragment"
             app:destination="@id/test_mutifragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_shapeviewfragment"
+            app:destination="@id/test_shapeviewfragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_titlebarfragment"
+            app:destination="@id/test_titlebarfragment" />
     </fragment>
     <fragment
         android:id="@+id/bindingfragment"
@@ -47,5 +53,14 @@
         android:id="@+id/test_mutifragment"
         android:name="com.rui.test.ui.fragment.MutiFragment"
         android:label="MutiFragment" />
+    <fragment
+        android:id="@+id/test_shapeviewfragment"
+        android:name="com.rui.test.ui.fragment.ShapeViewFragment"
+        android:label="ShapeViewFragment" />
+    <fragment
+        android:id="@+id/test_titlebarfragment"
+        android:name="com.rui.test.ui.fragment.TitleBarFragment"
+        android:label="TitleBarFragment" />
+
 
 </navigation>

@@ -12,25 +12,46 @@
 
         <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
 
+        <import type="android.view.View" />
+
     </data>
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="30dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp5"
+                android:onClick="@{v->viewModel.changeType(1)}"
                 android:text="线性布局"
-                android:textColor="@color/textColorRed"
                 android:textSize="@dimen/sp20" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->viewModel.changeType(2)}"
+                android:text="网格布局"
+                android:textSize="@dimen/sp20" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->viewModel.changeType(3)}"
+                android:text="瀑布流布局"
+                android:textSize="@dimen/sp20" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 bindAdapter="@{viewModel.lineAdapter}"
@@ -38,40 +59,28 @@
                 lineManager="@{LineManagers.divider(@color/divider,1)}"
                 setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp5"
-                android:text="网格布局"
-                android:textColor="@color/textColorRed"
-                android:textSize="@dimen/sp20" />
+                android:visibility="@{viewModel.type==1?View.VISIBLE:View.GONE}" />
 
             <androidx.recyclerview.widget.RecyclerView
                 bindAdapter="@{viewModel.grideAdapter}"
-                layoutManager="@{LayoutManagers.grid(4)}"
+                layoutManager="@{LayoutManagers.grid(3)}"
                 lineManager="@{LineManagers.divider(@color/divider,10)}"
                 setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp5"
-                android:text="瀑布流布局"
-                android:textColor="@color/textColorRed"
-                android:textSize="@dimen/sp20" />
+                android:visibility="@{viewModel.type==2?View.VISIBLE:View.GONE}" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 bindAdapter="@{viewModel.staggeredAdapter}"
-                layoutManager="@{LayoutManagers.staggeredGrid(4,LayoutManagers.VERTICAL)}"
+                layoutManager="@{LayoutManagers.staggeredGrid(3,LayoutManagers.VERTICAL)}"
                 lineManager="@{LineManagers.staggeredDivider(@color/divider,10)}"
                 setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.type==3?View.VISIBLE:View.GONE}" />
+        </FrameLayout>
+    </LinearLayout>
 
 </layout>
