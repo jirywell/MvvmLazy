@@ -19,7 +19,7 @@ package com.rui.mvvmlazy.utils.constant;
 /**
  * 日期格式
  *
- * @author xuexiang
+ * @author zjr
  * @date 2018/2/16 下午10:23
  */
 public final class DateFormatConstants {

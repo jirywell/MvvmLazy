@@ -26,7 +26,7 @@ import java.util.TimerTask;
 /**
  * 快速点击工具类
  *
- * @author xuexiang
+ * @author zjr
  * @since 2019-08-08 16:35
  */
 public final class ClickUtils {

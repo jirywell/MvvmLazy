@@ -1,6 +1,6 @@
 include ':module-sign'
 include ':module-home'
-include ':module-test'
+include ':module-demo'
 rootProject.name='懒人框架'
 include ':app', ':library-base', ':library-mvvmlazy'
 

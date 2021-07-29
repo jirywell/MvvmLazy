@@ -22,6 +22,15 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
+    //加载动画框架
+    api 'com.wang.avi:library:2.1.3'
+    //banner框架
+    api 'com.youth.banner:banner:2.1.0'
+    //TabLayout框架
+    api 'com.github.angcyo.DslTablayout:TabLayout:2.0.2'
+    api 'com.github.angcyo.DslTablayout:ViewPager1Delegate:2.0.2'
+    api 'com.github.angcyo.DslTablayout:ViewPager2Delegate:2.0.2'
+    api 'com.lxj:xpopup:2.2.23'
     //沉浸式框架
     api 'com.gyf.immersionbar:immersionbar:3.0.0'
     api 'com.github.getActivity:TitleBar:8.6'

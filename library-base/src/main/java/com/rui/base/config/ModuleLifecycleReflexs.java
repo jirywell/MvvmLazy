@@ -10,7 +10,7 @@ package com.rui.base.config;
 public class ModuleLifecycleReflexs {
     private static final String BaseInit = "com.rui.base.base.BaseModuleInit";
     private static final String HomeInit = "com.rui.home.ModuleInit";
-    private static final String TestInit = "com.rui.test.ModuleInit";
+    private static final String DemoInit = "com.rui.demo.ModuleInit";
     private static final String SignInit = "com.rui.sign.SignModuleInit";
-    public static String[] initModuleNames = {BaseInit, HomeInit, TestInit, SignInit};
+    public static String[] initModuleNames = {BaseInit, HomeInit, DemoInit, SignInit};
 }

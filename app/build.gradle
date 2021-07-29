@@ -93,7 +93,7 @@ dependencies {
     } else {
         implementation project(':module-home')
         implementation project(':module-sign')
-        implementation project(':module-test')
+        implementation project(':module-demo')
     }
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
