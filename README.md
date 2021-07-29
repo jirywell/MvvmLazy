@@ -97,7 +97,7 @@ apply from: "config.gradle"
 
 android = [] 是你的开发相关版本配置，可自行修改
 
-support = [] 是你的support相关配置，可自行修改
+android_x = [] 是android_x相关配置，可自行修改
 
 dependencies = [] 是依赖第三方库的配置，可以加新库，但不要去修改原有第三方库的版本号，不然可能会编译不过
 ### 1.4、配置AndroidManifest
