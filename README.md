@@ -1,6 +1,5 @@
 
-# MvvmLazy
-##
+# MvvmLazy Android懒人框架
 目前，android流行的MVC、MVP模式的开发框架很多，然而一款基于MVVM模式开发框架却很少。
 个人搜寻了市面上大量的开源框架,其中写的比较好的是[MVVMHabit](https://github.com/goldze/MVVMHabit),个人秉承减少重复造轮子的原则,在大神的框架基础上进行了大量的修改,
 集成了大量常用的开源框架和工具类,进行了大量公用模块封装,丰富了BindingAdapter自定义数据绑定,创建了这套Android懒人开发框架,已在多个商业项目中经过检验,可靠性值得信赖,鉴于还有大量的开发人员还在使用Java语言开发,本套框架使用Java语言编写,支持Java,kotlin混合开发.
@@ -677,7 +676,7 @@ ImageUtils.compressWithRx(filePaths, new Subscriber() {
 ** 本人喜欢尝试新的技术，以后发现有好用的东西，我将会在企业项目中实战，没有问题了就会把它引入到**MvvmLazy**中，一直维护着这套框架，谢谢各位朋友的支持。如果觉得这套框架不错的话，麻烦点个 **star**，你的支持则是我前进的动力！
 感谢各位大神提供的思路帮助..
 
-**邮箱**：664209769@
+**邮箱**：664209769@qq.com
 
 ## License
 
