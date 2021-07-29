@@ -163,10 +163,10 @@ CaocConfig.Builder.create()
 
 ##### 2.1.2、继承BaseActivity
 
-MainActivity继承BaseActivity
+LoginActivty
 ```java
 
-public class MainActivity extends BaseActivity<HomeActivityMainBinding, MainViewModel> {
+public class LoginActivty extends BaseActivity<ActivityloginBinding, LoginViewModel> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity<HomeActivityMainBinding, MainView
 
     @Override
     public int initContentView() {
-        return R.layout.home_activity_main;
+        return R.layout.activity_login;
     }
 
     @Override
@@ -192,7 +192,7 @@ public class MainActivity extends BaseActivity<HomeActivityMainBinding, MainView
 
 }
 ```
-> 保存home_activity_main.xml后databinding会生成一个HomeActivityMainBinding类。（如果没有生成，试着点击Build->Clean Project）
+> 保存activity_login.xml后databinding会生成一个ActivityloginBinding类。（如果没有生成，试着点击Build->Clean Project）
 
 BaseActivity是一个抽象类，有两个泛型参数，一个是ViewDataBinding，另一个是BaseViewModel，上面的ActivityLoginBinding则是继承的ViewDataBinding作为第一个泛型约束，LoginViewModel继承BaseViewModel作为第二个泛型约束。
 
@@ -205,9 +205,9 @@ initVariableId() 返回变量的id，对应activity_login中name="viewModel"，�
 
 ##### 2.1.3、继承BaseViewModel
 
-MainViewModel继承BaseViewModel
+LoginViewModel继承BaseViewModel
 ```java
-public class MainViewModel extends BaseViewModel<HomeRepository> {
+public class LoginViewModel extends BaseViewModel<HomeRepository> {
     public MainViewModel(@NonNull Application application) {
         super(application);
     }
