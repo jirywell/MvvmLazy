@@ -24,6 +24,7 @@
 	[rxbinding](https://github.com/JakeWharton/RxBinding)结合databinding扩展UI事件；
 	[rxpermissions](https://github.com/tbruyelle/RxPermissions)负责Android 6.0权限申请；
 	[DialogX](https://github.com/kongzue/DialogX)一个漂亮的、流畅的、可定制的多种风格的对话框。
+	[xpopup](https://github.com/li-xiaojun/XPopup)popwindows框架
 	[LiveEventBus](https://github.com/JeremyLiao/LiveEventBus)LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP。
 	[BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) 大名鼎鼎的BaseRecyclerViewAdapterHelper RecyclerView适配器管理框架qq.com
 	[TabLayout](https://gitee.com/kissyourface/DslTabLayout)一个功能强大的TabLayout框架
