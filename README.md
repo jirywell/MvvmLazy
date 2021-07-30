@@ -149,7 +149,7 @@ CaocConfig.Builder.create()
 <layout>
     <data>
         <variable
-            type="com.goldze.MvvmLazy.ui.login.LoginViewModel"
+            type="com.rui.MvvmLazy.ui.login.LoginViewModel"
             name="viewModel"
         />
     </data>
