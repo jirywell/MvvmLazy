@@ -17,23 +17,23 @@
 
 - **流行框架**
 
-	[retrofit](https://github.com/square/retrofit)+[okhttp](https://github.com/square/okhttp)+[rxJava](https://github.com/ReactiveX/RxJava)负责网络请求；
-	[gson](https://github.com/google/gson)负责解析json数据；
-	[glide](https://github.com/bumptech/glide)负责加载图片；
-	[rxlifecycle](https://github.com/trello/RxLifecycle)负责管理view的生命周期；与网络请求共存亡；
-	[rxbinding](https://github.com/JakeWharton/RxBinding)结合databinding扩展UI事件；
-	[rxpermissions](https://github.com/tbruyelle/RxPermissions)负责Android 6.0权限申请；
-	[DialogX](https://github.com/kongzue/DialogX)一个漂亮的、流畅的、可定制的多种风格的对话框。
-	[xpopup](https://github.com/li-xiaojun/XPopup)popwindows框架
-	[LiveEventBus](https://github.com/JeremyLiao/LiveEventBus)LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP。
-	[BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) 大名鼎鼎的BaseRecyclerViewAdapterHelper RecyclerView适配器管理框架qq.com
-	[TabLayout](https://gitee.com/kissyourface/DslTabLayout)一个功能强大的TabLayout框架
-	[youth.banner](https://github.com/youth5201314/banner)一个功能强大的banner框架
-	[immersionbar](https://github.com/dz-android/ImmersionBar)一个沉浸式管理框架
-	[TitleBar](https://github.com/getActivity/TitleBar)公用标题栏框架
-	[SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)下拉刷新框架
-	[RWidgetHelper](https://github.com/RuffianZhong/RWidgetHelper)代替selector，各个state状态背景/边框/文字变色,不用再写大量的shape文件了
-	[ARouter](https://github.com/alibaba/ARouter)阿里路由框架
+	[retrofit](https://github.com/square/retrofit)+ [okhttp](https://github.com/square/okhttp)+ [rxJava](https://github.com/ReactiveX/RxJava)负责网络请求；  
+	[gson](https://github.com/google/gson) 负责解析json数据；  
+	[glide](https://github.com/bumptech/glide) 负责加载图片；  
+	[rxlifecycle](https://github.com/trello/RxLifecycle) 负责管理view的生命周期；与网络请求共存亡；  
+	[rxbinding](https://github.com/JakeWharton/RxBinding) 结合databinding扩展UI事件；  
+	[rxpermissions](https://github.com/tbruyelle/RxPermissions) 负责Android 6.0权限申请；  
+	[DialogX](https://github.com/kongzue/DialogX) 一个漂亮的、流畅的、可定制的多种风格的对话框。  
+	[xpopup](https://github.com/li-xiaojun/XPopup) popwindows框架  
+	[LiveEventBus](https://github.com/JeremyLiao/LiveEventBus) LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP。  
+	[BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) 大名鼎鼎的BaseRecyclerViewAdapterHelper RecyclerView适配器管理框架  
+	[TabLayout](https://gitee.com/kissyourface/DslTabLayout) 一个功能强大的TabLayout框架  
+	[youth.banner](https://github.com/youth5201314/banner) 一个功能强大的banner框架  
+	[immersionbar](https://github.com/dz-android/ImmersionBar) 一个沉浸式管理框架  
+	[TitleBar](https://github.com/getActivity/TitleBar) 公用标题栏框架  
+	[SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout) 下拉刷新框架  
+	[RWidgetHelper](https://github.com/RuffianZhong/RWidgetHelper) 代替selector，各个state状态背景/边框/文字变色,不用再写大量的shape文件了  
+	[ARouter](https://github.com/alibaba/ARouter) 阿里路由框架  
 
 - **数据绑定**
 
