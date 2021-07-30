@@ -103,6 +103,12 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .findNavController(TestFragment.this)
                     .navigate(R.id.test_action_testfragment_to_test_shapeviewfragment);
         }
+        public void  downloadClick(){
+            downFile("http://gdown.baidu.com/data/wisegame/dc8a46540c7960a2/baidushoujizhushou_16798087.apk");
+        }
+        public  void viewPagerGroupClick(){
+            startContainerActivity(ViewPagerGroupFragment.class.getCanonicalName());
+        }
     }
 
     /**

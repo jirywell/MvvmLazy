@@ -31,9 +31,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(':library-base')
     //组件中依赖阿里路由编译框架
-    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
-    annotationProcessor  rootProject.ext.android_x["room-compiler"]
     kapt rootProject.ext.android_x["room-compiler"]
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -1,4 +1,4 @@
-package com.rui.base.viewModel;
+package com.rui.base.ui.viewModel;
 
 import android.app.Application;
 import android.util.Log;

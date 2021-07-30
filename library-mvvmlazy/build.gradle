@@ -6,8 +6,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
     }
     buildFeatures {
         dataBinding = true
@@ -30,7 +28,8 @@ dependencies {
     api 'com.github.angcyo.DslTablayout:TabLayout:2.0.2'
     api 'com.github.angcyo.DslTablayout:ViewPager1Delegate:2.0.2'
     api 'com.github.angcyo.DslTablayout:ViewPager2Delegate:2.0.2'
-    api 'com.lxj:xpopup:2.2.23'
+    //popwindows框架
+    api 'com.github.li-xiaojun:XPopup:2.5.4'
     //沉浸式框架
     api 'com.gyf.immersionbar:immersionbar:3.0.0'
     api 'com.github.getActivity:TitleBar:8.6'
@@ -45,7 +44,7 @@ dependencies {
     api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
     api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
     api "org.jetbrains.anko:anko:$anko_version"
-    api "org.jetbrains.kotlin:kotlin-stdlib:1.5.20"
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
     //android_x
     api rootProject.ext.android_x.multidex
     api rootProject.ext.android_x["appcompat"]

@@ -9,7 +9,7 @@
             type="Boolean" />
         <variable
             name="viewModel"
-            type="com.rui.base.viewModel.BasePaginationViewModel" />
+            type="com.rui.base.ui.viewModel.BasePaginationViewModel" />
 
         <variable
             name="layoutManagerFactory"

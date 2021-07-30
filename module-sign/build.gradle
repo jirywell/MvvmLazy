@@ -27,8 +27,6 @@ dependencies {
     implementation 'com.github.WGwangguan:SeparatedEditText:v1.2'
     api project(':library-base')
     kapt rootProject.ext.dependencies["arouter-compiler"]
-    //组件中依赖阿里路由编译框架
-    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     androidTestImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

@@ -7,8 +7,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
         multiDexEnabled true
     }
     buildFeatures {
@@ -54,10 +52,12 @@ dependencies {
     // 图片、视频选择器
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.0'
     //  滚轮选择器（时间、日期、地址）
-    api 'com.contrarywind:Android-PickerView:4.1.9'
+//    api 'com.contrarywind:Android-PickerView:4.1.9'
+
+//    api 'com.github.li-xiaojun:XPopupExt:0.0.7'
     //城市选择
     api 'liji.library.dev:citypickerview:5.2.4'
-    //popwindows框架
+
 
     api 'com.google.android:flexbox:2.0.1'
     // 评价 图标

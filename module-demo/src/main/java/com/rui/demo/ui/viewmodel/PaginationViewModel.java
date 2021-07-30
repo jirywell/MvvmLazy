@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.rui.base.viewModel.BasePaginationViewModel;
+import com.rui.base.ui.viewModel.BasePaginationViewModel;
 import com.rui.mvvmlazy.binding.viewadapter.recyclerview.DataBindingAdapter;
 import com.rui.mvvmlazy.http.BaseResponse;
 import com.rui.demo.R;
