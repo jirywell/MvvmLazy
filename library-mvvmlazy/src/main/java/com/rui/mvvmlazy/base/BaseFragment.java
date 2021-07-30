@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -14,6 +16,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.gyf.immersionbar.ImmersionBar;
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
 import com.kongzue.dialogx.dialogs.WaitDialog;
 import com.trello.rxlifecycle4.components.support.RxFragment;
 
@@ -32,7 +37,14 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     protected VM viewModel;
     private int viewModelId;
     private WaitDialog dialog;
-
+    /**
+     * 标题栏对象
+     */
+    private TitleBar mTitleBar;
+    /**
+     * 状态栏沉浸
+     */
+    private ImmersionBar mImmersionBar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +52,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         viewModel = initViewModel();
         initModel();
         initParam();
+
         initSavedInstanceState(savedInstanceState);
     }
 
@@ -47,22 +60,109 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
      * 注入model
      */
     public void initModel() {
-        Class modelClass = null;
         Type type = viewModel.getClass().getGenericSuperclass();
         if (type instanceof ParameterizedType) {
-            modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[0];
-        }
-        if (BaseModel.class.isAssignableFrom(modelClass)) {
-            try {
-                BaseModel baseModel = (BaseModel) modelClass.getConstructor().newInstance();
-                viewModel.setModel(baseModel);
-            } catch (NoSuchMethodException | IllegalAccessException | java.lang.InstantiationException | InvocationTargetException e) {
-                throw new RuntimeException("Cannot create an instance of " + modelClass, e);
+            Type[] types = ((ParameterizedType) type).getActualTypeArguments();
+            for (Type type1 : types) {
+                Class modelClass = (Class) type1;
+                if (BaseModel.class.isAssignableFrom(modelClass)) {
+                    try {
+                        BaseModel baseModel = (BaseModel) modelClass.getConstructor().newInstance();
+                        viewModel.setModel(baseModel);
+                    } catch (NoSuchMethodException | IllegalAccessException | java.lang.InstantiationException | InvocationTargetException e) {
+                        throw new RuntimeException("Cannot create an instance of " + modelClass, e);
+                    }
+                    break;
+                }
             }
         }
 
     }
+    private void initLayout() {
+        mTitleBar = obtainTitleBar((ViewGroup) getView());
+        if (mTitleBar != null) {
+            initTitleBar(mTitleBar);
+            mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+                @Override
+                public void onLeftClick(View view) {
+                    requireActivity().onBackPressed();
+                }
 
+                @Override
+                public void onTitleClick(View view) {
+
+                }
+
+                @Override
+                public void onRightClick(View view) {
+
+                }
+            });
+        }
+        // 初始化沉浸式状态栏
+        if (isStatusBarEnabled()) {
+            getStatusBarConfig().init();
+            // 设置标题栏沉浸
+            if (mTitleBar != null) {
+                ImmersionBar.setTitleBar(this, mTitleBar);
+            }
+        }
+    }
+    /**
+     * 是否使用沉浸式状态栏
+     */
+    protected boolean isStatusBarEnabled() {
+        return true;
+    }
+
+    /**
+     * 状态栏字体深色模式
+     */
+    protected boolean isStatusBarDarkFont() {
+        return true;
+    }
+
+    /**
+     * 获取状态栏沉浸的配置对象
+     */
+    @NonNull
+    public ImmersionBar getStatusBarConfig() {
+        if (mImmersionBar == null) {
+            mImmersionBar = createStatusBarConfig();
+        }
+        return mImmersionBar;
+    }
+
+    /**
+     * 初始化沉浸式状态栏
+     */
+    @NonNull
+    protected ImmersionBar createStatusBarConfig() {
+        return ImmersionBar.with(this)
+                // 默认状态栏字体颜色为黑色
+                .statusBarDarkFont(isStatusBarDarkFont())
+                // 指定导航栏背景颜色
+                .navigationBarColor(android.R.color.white)
+                // 状态栏字体和导航栏内容自动变色，必须指定状态栏颜色和导航栏颜色才可以自动变色
+                .autoDarkModeEnable(true, 0.2f);
+    }
+    /**
+     * 递归获取 ViewGroup 中的 TitleBar 对象
+     */
+    public TitleBar obtainTitleBar(ViewGroup group) {
+        for (int i = 0; i < group.getChildCount(); i++) {
+            View view = group.getChildAt(i);
+            if ((view instanceof TitleBar)) {
+                return (TitleBar) view;
+            } else if (view instanceof ViewGroup) {
+                TitleBar titleBar = obtainTitleBar((ViewGroup) view);
+                if (titleBar != null) {
+                    return titleBar;
+                }
+            }
+        }
+        return null;
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -97,6 +197,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         initData();
         //页面事件监听的方法，一般用于ViewModel层转到View层的事件注册
         initViewObservable();
+        initLayout();
         //注册RxBus
         viewModel.registerEventBus();
         viewModel.initData();
@@ -241,12 +342,12 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     public void initParam() {
 
     }
+    public void initTitleBar(TitleBar titleBar) {
+    }
 
     public void initSavedInstanceState(Bundle savedInstanceState) {
 
     }
-
-    ;
 
     /**
      * 初始化根布局

@@ -370,8 +370,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
                     break;
                 }
             }
-
-
         }
     }
 

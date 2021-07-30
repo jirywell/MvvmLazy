@@ -13,7 +13,6 @@
 
         <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
 
-        <import type="com.rui.base.viewModel.BasePaginationViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

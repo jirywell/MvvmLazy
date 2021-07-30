@@ -35,14 +35,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:onClick="@{() -> presenter.listClick()}"
+                android:onClick="@{() -> presenter.rvPaginationClick()}"
                 android:text="列表分页加载" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:onClick="@{() -> presenter.rvPaginationClick()}"
+                android:onClick="@{() -> presenter.listClick()}"
                 android:text="列表布局" />
 
             <Button

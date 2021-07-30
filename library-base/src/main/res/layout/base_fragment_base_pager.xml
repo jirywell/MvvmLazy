@@ -26,9 +26,17 @@
             android:layout_height="@dimen/dp44"
             android:background="@color/white"
             app:tab_draw_badge="false"
-            app:tab_enable_text_color="@color/color_9c"
-            app:tab_item_is_equ_width="false"
-            app:tab_select_color="@color/color_27" />
+            app:tab_enable_gradient_text_size="true"
+            app:tab_enable_text_color="@color/text_def"
+            app:tab_indicator_color="@color/colorAccent"
+            app:tab_indicator_drawable="@drawable/indicator_bottom_line"
+            app:tab_indicator_enable_flow="true"
+            app:tab_indicator_width_offset="-20dp"
+            app:tab_item_auto_equ_width="true"
+            app:tab_item_is_equ_width="true"
+            app:tab_select_color="@color/text_major"
+            app:tab_text_max_size="16sp"
+            app:tab_text_min_size="14sp" />
 
         <View
             android:layout_width="match_parent"

@@ -60,13 +60,13 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .navigate(R.id.home_action_testfragment_to_bindingfragment);
         }
 
-        public void listClick() {
+        public void rvPaginationClick() {
             NavHostFragment
                     .findNavController(TestFragment.this)
                     .navigate(R.id.home_action_testfragment_to_home_paginationfragment);
         }
 
-        public void rvPaginationClick() {
+        public void listClick() {
             NavHostFragment
                     .findNavController(TestFragment.this)
                     .navigate(R.id.home_action_testfragment_to_home_listfragment);

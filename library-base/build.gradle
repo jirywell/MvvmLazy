@@ -42,7 +42,6 @@ dependencies {
     api project(':library-mvvmlazy')
     //阿里路由框架
     api rootProject.ext.dependencies["arouter-api"]
-
     //标签框架
     api 'com.github.donkingliang:LabelsView:1.5.0'
     //角标
@@ -51,13 +50,10 @@ dependencies {
     api 'com.zzhoujay.richtext:richtext:3.0.8'//加载富文本  视频待确认
     // 图片、视频选择器
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.0'
-    //  滚轮选择器（时间、日期、地址）
-//    api 'com.contrarywind:Android-PickerView:4.1.9'
 
-//    api 'com.github.li-xiaojun:XPopupExt:0.0.7'
+    api 'com.github.li-xiaojun:XPopupExt:0.0.7'
     //城市选择
     api 'liji.library.dev:citypickerview:5.2.4'
-
 
     api 'com.google.android:flexbox:2.0.1'
     // 评价 图标
@@ -68,13 +64,5 @@ dependencies {
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 //倒计时控件
     api 'com.github.iwgang:countdownview:2.1.6'
-    api 'com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.3'
-    //  友盟分享  基础包
-//    api 'com.umeng.umsdk:common:9.3.3'
-//    api 'com.umeng.umsdk:asms:1.1.4' // asms包依赖(必选)
-//    api 'com.umeng.umsdk:crash:0.0.4' // native crash包依赖(必选)
-//    api 'com.umeng.umsdk:share-core:7.1.4'
-//    api 'com.umeng.umsdk:share-board:7.1.4'
-////     友盟分享的分享包
-//    api 'com.umeng.umsdk:share-wx:7.1.4'
+
 }

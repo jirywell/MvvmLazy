@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
-import com.rui.mvvmlazy.base.BaseFragment;
 import com.rui.demo.BR;
 import com.rui.demo.R;
-import com.rui.demo.databinding.TestFragmentPaginationBinding;
+import com.rui.demo.databinding.TestFragmentListBinding;
 import com.rui.demo.ui.viewmodel.ListViewModel;
+import com.rui.mvvmlazy.base.BaseFragment;
 
-public class ListFragment extends BaseFragment<TestFragmentPaginationBinding, ListViewModel> {
+public class ListFragment extends BaseFragment<TestFragmentListBinding, ListViewModel> {
 
 
     @Override
