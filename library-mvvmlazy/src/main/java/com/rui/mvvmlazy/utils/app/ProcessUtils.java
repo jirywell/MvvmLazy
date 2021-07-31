@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 xuexiangjys(xuexiangjys@163.com)
+ * Copyright (C) 2020 jirui_zhao(jirui_zhao@163.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ import static android.Manifest.permission.PACKAGE_USAGE_STATS;
 /**
  * <pre>
  *     desc   : 进程相关工具类(6.0以后失效）
- *     author : xuexiang
+ *     author : zjr
  *     time   : 2018/4/28 上午12:35
  * </pre>
  */

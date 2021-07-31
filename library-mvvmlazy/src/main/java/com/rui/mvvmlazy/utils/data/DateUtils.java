@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 xuexiangjys(xuexiangjys@163.com)
+ * Copyright (C) 2018 jirui_zhao(jirui_zhao@163.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 /**
  * <pre>
  *     desc   : 日期工具
- *     author : xuexiang
+ *     author : zjr
  *     time   : 2018/4/30 下午12:22
  * </pre>
  */

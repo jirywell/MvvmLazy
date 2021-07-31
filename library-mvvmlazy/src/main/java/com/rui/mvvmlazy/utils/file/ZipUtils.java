@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 xuexiangjys(xuexiangjys@163.com)
+ * Copyright (C) 2018 jirui_zhao(jirui_zhao@163.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * <pre>
  *     desc   : 压缩相关工具类
- *     author : xuexiang
+ *     author : zjr
  *     time   : 2018/4/28 上午12:53
  * </pre>
  */
