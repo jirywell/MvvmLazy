@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kongzue.dialogx.DialogX;
-import com.kongzue.dialogx.style.MaterialStyle;
+import com.kongzue.dialogx.style.IOSStyle;
 import com.kongzue.dialogx.util.InputInfo;
 import com.kongzue.dialogx.util.TextInfo;
 import com.rui.base.BuildConfig;
@@ -66,12 +66,13 @@ public class BaseModuleInit implements IModuleInit {
      */
     public void initDialogx(Application application) {
         DialogX.init(application);
+//        DialogX.implIMPLMode= DialogX.IMPL_MODE.DIALOG_FRAGMENT;
         //开启调试模式，在部分情况下会使用 Log 输出日志信息
         DialogX.DEBUGMODE = true;
 
 //设置主题样式
-        DialogX.globalStyle = MaterialStyle.style();
-//        DialogX.globalStyle = IOSStyle.style();
+//        DialogX.globalStyle = MaterialStyle.style();
+        DialogX.globalStyle = IOSStyle.style();
 
 //设置亮色/暗色（在启动下一个对话框时生效）
         DialogX.globalTheme = DialogX.THEME.LIGHT;
