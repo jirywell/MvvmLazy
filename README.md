@@ -406,9 +406,6 @@ layoutManager控制是线性(包含水平和垂直)排列还是网格排列，li
 
 详细可以参考例子程序中ListViewModel类。
 
-**注意：** 在以前的版本中，ItemViewModel是继承BaseViewModel，传入Context，新版本3.x中可继承ItemViewModel，传入当前页面的ViewModel
-
-更多RecyclerView、ListView、ViewPager等绑定方式，请参考 [https://github.com/evant/binding-collection-adapter](https://github.com/evant/binding-collection-adapter)
 
 ### 2.3、网络请求
 > 网络请求一直都是一个项目的核心，现在的项目基本都离不开网络，一个好用网络请求框架可以让开发事半功倍。
