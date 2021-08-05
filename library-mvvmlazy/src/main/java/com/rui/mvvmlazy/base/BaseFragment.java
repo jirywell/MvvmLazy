@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,15 +18,15 @@ import androidx.lifecycle.ViewModelProvider;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
-import com.kongzue.dialogx.dialogs.WaitDialog;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.impl.LoadingPopupView;
+import com.rui.mvvmlazy.base.BaseViewModel.ParameterField;
 import com.trello.rxlifecycle4.components.support.RxFragment;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
-
-import com.rui.mvvmlazy.base.BaseViewModel.ParameterField;
 
 /**
  * Created by zjr on 2020/6/15.
@@ -36,7 +35,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     protected V binding;
     protected VM viewModel;
     private int viewModelId;
-    private WaitDialog dialog;
+    private LoadingPopupView loadingPopup;
     /**
      * 标题栏对象
      */
@@ -45,6 +44,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
      * 状态栏沉浸
      */
     private ImmersionBar mImmersionBar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +78,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         }
 
     }
+
     private void initLayout() {
         mTitleBar = obtainTitleBar((ViewGroup) getView());
         if (mTitleBar != null) {
@@ -108,6 +109,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
             }
         }
     }
+
     /**
      * 是否使用沉浸式状态栏
      */
@@ -146,6 +148,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
                 // 状态栏字体和导航栏内容自动变色，必须指定状态栏颜色和导航栏颜色才可以自动变色
                 .autoDarkModeEnable(true, 0.2f);
     }
+
     /**
      * 递归获取 ViewGroup 中的 TitleBar 对象
      */
@@ -163,6 +166,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         }
         return null;
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -270,13 +274,20 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     }
 
     public void showDialog(String title) {
-        dismissDialog();
-        dialog = WaitDialog.show(title);
+        if (loadingPopup == null) {
+            loadingPopup = (LoadingPopupView) new XPopup.Builder(requireContext())
+                    .dismissOnBackPressed(false)
+                    .asLoading(title)
+                    .show();
+        } else {
+            loadingPopup.setTitle(title);
+            loadingPopup.show();
+        }
     }
 
     public void dismissDialog() {
-        if (dialog != null && dialog.isShow()) {
-            dialog.doDismiss();
+        if (loadingPopup != null && loadingPopup.isShow()) {
+            loadingPopup.dismiss();
         }
     }
 
@@ -342,6 +353,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     public void initParam() {
 
     }
+
     public void initTitleBar(TitleBar titleBar) {
     }
 

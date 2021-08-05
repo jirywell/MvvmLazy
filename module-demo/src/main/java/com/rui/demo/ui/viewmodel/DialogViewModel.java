@@ -1,14 +1,14 @@
-package com.rui.home.ui.viewmodel;
+package com.rui.demo.ui.viewmodel;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 
-import com.rui.home.data.HomeRepository;
+import com.rui.demo.data.DiscoverRepository;
 import com.rui.mvvmlazy.base.BaseViewModel;
 
-public class MainViewModel extends BaseViewModel<HomeRepository> {
-    public MainViewModel(@NonNull Application application) {
+public class DialogViewModel extends BaseViewModel<DiscoverRepository> {
+    public DialogViewModel(@NonNull Application application) {
         super(application);
     }
 

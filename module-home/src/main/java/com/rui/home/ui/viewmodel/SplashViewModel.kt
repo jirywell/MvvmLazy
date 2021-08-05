@@ -3,13 +3,15 @@ package com.rui.home.ui.viewmodel
 import android.app.Application
 import android.os.Handler
 import android.text.SpannableStringBuilder
+import android.view.Gravity
 import android.view.View
 import com.alibaba.android.arouter.launcher.ARouter
-import com.kongzue.dialogx.dialogs.MessageDialog
+import com.lxj.xpopup.XPopup
 import com.rui.base.router.RouterActivityPath
 import com.rui.home.R
 import com.rui.home.data.HomeRepository
 import com.rui.home.utils.TextBackClickUtils
+import com.rui.mvvmlazy.base.AppManager
 import com.rui.mvvmlazy.base.BaseViewModel
 import com.rui.mvvmlazy.utils.common.ToastUtils
 import com.rui.mvvmlazy.utils.data.SPUtils
@@ -21,24 +23,26 @@ class SplashViewModel(application: Application) : BaseViewModel<HomeRepository?>
             val content = getApplication<Application>().getString(R.string.home_welcome_dialog)
             val verification = SpannableStringBuilder()
             verification.append(content)
-            val dialog = MessageDialog("用户协议和隐私政策", verification, "同意", "暂不使用")
-                .setOkButtonClickListener { baseDialog, v ->
-                    baseDialog.dismiss()
-                    SPUtils.getInstance().put("showWelDialog", true)
-                    Handler().postDelayed({
-                        ARouter.getInstance().build(RouterActivityPath.Test.TESTPAGER)
-                            .navigation()
+
+            val dialog = XPopup.Builder(AppManager.getAppManager().currentActivity())
+                .hasNavigationBar(false)
+                .isDestroyOnDismiss(true)
+                .asConfirm("用户协议和隐私政策", verification,
+                    "暂不使用", "同意",
+                    {
+                        SPUtils.getInstance().put("showWelDialog", true)
+                        Handler().postDelayed({
+                            ARouter.getInstance().build(RouterActivityPath.Test.TESTPAGER)
+                                .navigation()
+                            finish()
+                        }, 1500)
+                    }, {
                         finish()
-                    }, 1500)
-                    false
-                }
-                .setCancelButtonClickListener { baseDialog, v ->
-                    baseDialog.dismiss()
-                    finish()
-                    false
-                }
+                    }, false
+                )
             dialog.show()
-            val tvTip = dialog.dialogImpl.txtDialogTip
+            val tvTip = dialog.contentTextView
+            tvTip.gravity = Gravity.START
             TextBackClickUtils.setBackClick(
                 tvTip,
                 verification,

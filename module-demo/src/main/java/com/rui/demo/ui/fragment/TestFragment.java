@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.rui.demo.BR;
+import com.rui.demo.R;
+import com.rui.demo.databinding.TestFragmentHomeBinding;
+import com.rui.demo.ui.viewmodel.TestViewModel;
 import com.rui.mvvmlazy.base.BaseFragment;
 import com.rui.mvvmlazy.http.DownLoadManager;
 import com.rui.mvvmlazy.http.download.ProgressCallBack;
 import com.rui.mvvmlazy.utils.common.KLog;
 import com.rui.mvvmlazy.utils.common.ToastUtils;
-import com.rui.demo.BR;
-import com.rui.demo.R;
-import com.rui.demo.databinding.TestFragmentHomeBinding;
-import com.rui.demo.ui.viewmodel.TestViewModel;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 
 import okhttp3.ResponseBody;
@@ -102,12 +102,21 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
             NavHostFragment
                     .findNavController(TestFragment.this)
                     .navigate(R.id.test_action_testfragment_to_test_shapeviewfragment);
+
         }
-        public void  downloadClick(){
+
+        public void downloadClick() {
             downFile("http://gdown.baidu.com/data/wisegame/dc8a46540c7960a2/baidushoujizhushou_16798087.apk");
         }
-        public  void viewPagerGroupClick(){
+
+        public void viewPagerGroupClick() {
             startContainerActivity(ViewPagerGroupFragment.class.getCanonicalName());
+        }
+
+        public void dialogClick() {
+            NavHostFragment
+                    .findNavController(TestFragment.this)
+                    .navigate(R.id.test_action_testfragment_to_test_dialogfragment);
         }
     }
 

@@ -32,6 +32,9 @@
         <action
             android:id="@+id/test_action_testfragment_to_test_titlebarfragment"
             app:destination="@id/test_titlebarfragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_dialogfragment"
+            app:destination="@id/test_dialogfragment" />
     </fragment>
     <fragment
         android:id="@+id/bindingfragment"
@@ -61,6 +64,10 @@
         android:id="@+id/test_titlebarfragment"
         android:name="com.rui.demo.ui.fragment.TitleBarFragment"
         android:label="TitleBarFragment" />
+    <fragment
+        android:id="@+id/test_dialogfragment"
+        android:name="com.rui.demo.ui.fragment.DialogFragment"
+        android:label="DialogFragment" />
 
 
 </navigation>

@@ -21,7 +21,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
-import com.kongzue.dialogx.dialogs.WaitDialog;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.impl.LoadingPopupView;
 import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
 
 import java.lang.reflect.InvocationTargetException;
@@ -42,7 +43,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     /**
      * 加载框
      */
-    private WaitDialog dialog;
+    private LoadingPopupView loadingPopup;
     protected Context mContext;
     /**
      * 标题栏对象
@@ -221,13 +222,20 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     }
 
     public void showDialog(String title) {
-        dismissDialog();
-        dialog = WaitDialog.show(title);
+        if (loadingPopup == null) {
+            loadingPopup = (LoadingPopupView) new XPopup.Builder(this)
+                    .dismissOnBackPressed(false)
+                    .asLoading(title)
+                    .show();
+        } else {
+            loadingPopup.setTitle(title);
+            loadingPopup.show();
+        }
     }
 
     public void dismissDialog() {
-        if (dialog != null && dialog.isShow()) {
-            dialog.doDismiss();
+        if (loadingPopup != null && loadingPopup.isShow()) {
+            loadingPopup.dismiss();
         }
     }
 
