@@ -15,16 +15,16 @@ import com.rui.base.R;
  * Description: 自定义带有输入框的Bottom弹窗
  * Create by dance, at 2019/2/27
  */
-public class CustomEditTextBottomPopup extends BottomPopupView {
+public class EditTextBottomPopup extends BottomPopupView {
 
-    public CustomEditTextBottomPopup(@NonNull Context context, OnInputConfirmListener inputConfirmListener) {
+    public EditTextBottomPopup(@NonNull Context context, OnInputConfirmListener inputConfirmListener) {
         super(context);
         this.inputConfirmListener = inputConfirmListener;
     }
 
     @Override
     protected int getImplLayoutId() {
-        return R.layout.custom_edittext_bottom_popup;
+        return R.layout.edittext_bottom_popup;
     }
 
     @Override
@@ -36,17 +36,14 @@ public class CustomEditTextBottomPopup extends BottomPopupView {
     protected void onShow() {
         super.onShow();
         EditText etComment = findViewById(R.id.et_comment);
-        findViewById(R.id.btn_finish).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String content = etComment.getText().toString().trim();
-                if (!TextUtils.isEmpty(content)) {
-                    if (inputConfirmListener != null) {
-                        inputConfirmListener.onConfirm(content);
-                    }
-                    etComment.setText("");
-                    dismiss();
+        findViewById(R.id.btn_finish).setOnClickListener(v -> {
+            String content = etComment.getText().toString().trim();
+            if (!TextUtils.isEmpty(content)) {
+                if (inputConfirmListener != null) {
+                    inputConfirmListener.onConfirm(content);
                 }
+                etComment.setText("");
+                dismiss();
             }
         });
 
@@ -56,7 +53,6 @@ public class CustomEditTextBottomPopup extends BottomPopupView {
     @Override
     protected void onDismiss() {
         super.onDismiss();
-//        Log.e("tag", "CustomEditTextBottomPopup  onDismiss");
     }
 
     OnInputConfirmListener inputConfirmListener;

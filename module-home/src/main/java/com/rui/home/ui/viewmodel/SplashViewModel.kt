@@ -2,6 +2,7 @@ package com.rui.home.ui.viewmodel
 
 import android.app.Application
 import android.os.Handler
+import android.os.Looper
 import android.text.SpannableStringBuilder
 import android.view.Gravity
 import android.view.View
@@ -31,7 +32,7 @@ class SplashViewModel(application: Application) : BaseViewModel<HomeRepository?>
                     "暂不使用", "同意",
                     {
                         SPUtils.getInstance().put("showWelDialog", true)
-                        Handler().postDelayed({
+                        Handler(Looper.myLooper()!!).postDelayed({
                             ARouter.getInstance().build(RouterActivityPath.Test.TESTPAGER)
                                 .navigation()
                             finish()
@@ -63,7 +64,7 @@ class SplashViewModel(application: Application) : BaseViewModel<HomeRepository?>
             }
 
         } else {
-            Handler().postDelayed({
+            Handler(Looper.myLooper()!!).postDelayed({
                 ARouter.getInstance().build(RouterActivityPath.Test.TESTPAGER).navigation()
                 finish()
             }, 1500)
