@@ -30,9 +30,6 @@
             android:id="@+id/test_action_testfragment_to_test_shapeviewfragment"
             app:destination="@id/test_shapeviewfragment" />
         <action
-            android:id="@+id/test_action_testfragment_to_test_titlebarfragment"
-            app:destination="@id/test_titlebarfragment" />
-        <action
             android:id="@+id/test_action_testfragment_to_test_dialogfragment"
             app:destination="@id/test_dialogfragment" />
     </fragment>
@@ -60,10 +57,7 @@
         android:id="@+id/test_shapeviewfragment"
         android:name="com.rui.demo.ui.fragment.ShapeViewFragment"
         android:label="ShapeViewFragment" />
-    <fragment
-        android:id="@+id/test_titlebarfragment"
-        android:name="com.rui.demo.ui.fragment.TitleBarFragment"
-        android:label="TitleBarFragment" />
+
     <fragment
         android:id="@+id/test_dialogfragment"
         android:name="com.rui.demo.ui.fragment.DialogFragment"

@@ -78,11 +78,7 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .navigate(R.id.test_action_testfragment_to_test_mutifragment);
         }
 
-        public void titleBarClick() {
-            NavHostFragment
-                    .findNavController(TestFragment.this)
-                    .navigate(R.id.test_action_testfragment_to_test_titlebarfragment);
-        }
+
 
         public void errorClick() {
             Integer.parseInt("你好");
@@ -108,7 +104,9 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
         public void downloadClick() {
             downFile("http://gdown.baidu.com/data/wisegame/dc8a46540c7960a2/baidushoujizhushou_16798087.apk");
         }
-
+        public void titleBarClick() {
+            startContainerActivity(TitleBarFragment.class.getCanonicalName());
+        }
         public void viewPagerGroupClick() {
             startContainerActivity(ViewPagerGroupFragment.class.getCanonicalName());
         }
