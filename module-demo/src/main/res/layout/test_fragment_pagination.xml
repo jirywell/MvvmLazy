@@ -12,8 +12,6 @@
         <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers" />
 
         <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
-
-  <import type="com.rui.base.ui.viewModel.BasePaginationViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +24,7 @@
             app:enableRefresh="@{true}"
             app:layoutManagerFactory="@{LayoutManagers.linear()}"
             app:lineManagerFactory="@{LineManagers.divider(@color/divider,1)}"
-            app:viewModel="@{(BasePaginationViewModel)viewModel}" />
+            app:viewModel="@{viewModel}" />
     </LinearLayout>
 
 
