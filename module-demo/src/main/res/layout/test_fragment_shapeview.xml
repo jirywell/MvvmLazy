@@ -251,8 +251,8 @@
                     app:corner_radius="10dp"
                     app:icon_direction="top"
                     app:icon_height="30dp"
-                    app:icon_src_normal="@mipmap/icon_phone_normal"
-                    app:icon_src_pressed="@mipmap/icon_phone_pressed"
+                    app:icon_src_normal="@drawable/icon_phone_normal"
+                    app:icon_src_pressed="@drawable/icon_phone_pressed"
                     app:icon_width="30dp"
                     app:text_color_pressed="@color/colorPrimary" />
 
@@ -273,7 +273,7 @@
                 app:border_width_normal="2dp"
                 app:icon_direction="left"
                 app:icon_height="20dp"
-                app:icon_src_normal="@mipmap/icon_phone_pressed"
+                app:icon_src_normal="@drawable/icon_phone_pressed"
                 app:icon_width="20dp"
                 app:icon_with_text="true" />
 

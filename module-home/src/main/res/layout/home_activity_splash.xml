@@ -15,16 +15,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/mineGreen">
+        android:background="#FF5091F5">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp31"
-            android:text="启动页"
+            android:drawableTop="@drawable/home_ic_splash"
+            android:text="努力搬砖的码农"
+            android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp15"
             android:textColor="@color/white"
-            android:textSize="50sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

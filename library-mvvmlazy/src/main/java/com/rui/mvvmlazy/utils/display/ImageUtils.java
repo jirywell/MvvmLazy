@@ -74,9 +74,9 @@ import java.io.OutputStream;
  * @Copyright (C)下午10:30 , www.hotapk.cn
  * 图片工具类
  */
-public final class FImageUtils {
+public final class ImageUtils {
 
-    private FImageUtils() {
+    private ImageUtils() {
 
     }
 
