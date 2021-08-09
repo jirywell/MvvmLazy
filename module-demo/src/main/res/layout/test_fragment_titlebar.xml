@@ -70,9 +70,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:leftIcon="@mipmap/ic_launcher"
+                    app:leftIcon="@drawable/test_search"
                     app:leftTint="#ff00ff"
-                    app:rightIcon="@mipmap/ic_launcher"
+                    app:rightIcon="@drawable/test_search"
                     app:rightTint="#00ff00"
                     app:title="带图标的标题栏" />
 
@@ -81,8 +81,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     app:drawableSize="30dp"
-                    app:leftIcon="@mipmap/ic_launcher"
-                    app:rightIcon="@mipmap/ic_launcher"
+                    app:leftIcon="@drawable/test_search"
+                    app:rightIcon="@drawable/test_search"
                     app:title="限制左右图标的大小" />
 
                 <com.hjq.bar.TitleBar
@@ -104,9 +104,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:leftIcon="@mipmap/ic_launcher"
+                    app:leftIcon="@drawable/test_search"
                     app:leftTitle="左边"
-                    app:rightIcon="@mipmap/ic_launcher"
+                    app:rightIcon="@drawable/test_search"
                     app:rightTitle="右边"
                     app:title="监听标题栏点击事件" />
 
@@ -125,14 +125,14 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@mipmap/ic_launcher" />
+                            android:src="@drawable/test_search" />
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="10dp"
-                            android:src="@mipmap/ic_launcher" />
+                            android:src="@drawable/test_search" />
 
                     </LinearLayout>
 
