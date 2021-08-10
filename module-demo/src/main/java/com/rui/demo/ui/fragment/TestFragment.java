@@ -116,6 +116,11 @@ public class TestFragment extends BaseFragment<TestFragmentHomeBinding, TestView
                     .findNavController(TestFragment.this)
                     .navigate(R.id.test_action_testfragment_to_test_dialogfragment);
         }
+        public void btmTabClick() {
+            NavHostFragment
+                    .findNavController(TestFragment.this)
+                    .navigate(R.id.test_action_testfragment_to_test_btmtabfragment);
+        }
     }
 
     /**

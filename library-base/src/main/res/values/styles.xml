@@ -66,5 +66,14 @@
         <item name="android:windowSoftInputMode">stateAlwaysVisible</item>
     </style>
 
-
+    <style name="TabItemStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="TabCommonItemStyle" parent="TabItemStyle">
+        <item name="android:padding">4dp</item>
+    </style>
 </resources>
