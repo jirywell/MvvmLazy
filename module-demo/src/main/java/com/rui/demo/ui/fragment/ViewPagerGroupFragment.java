@@ -31,10 +31,10 @@ public class ViewPagerGroupFragment extends BasePagerFragment {
     @Override
     protected List<String> pagerTitleString() {
         List<String> list = new ArrayList<>();
-        list.add("page1");
-        list.add("page2");
-        list.add("page3");
-        list.add("page4");
+        list.add("推荐");
+        list.add("新闻");
+        list.add("资讯");
+        list.add("消息");
         return list;
     }
 }
