@@ -1,4 +1,4 @@
-package com.rui.sign;
+package com.rui.home;
 
 import android.content.Context;
 
@@ -17,12 +17,12 @@ import java.util.List;
  * *description:基础库初始化
  * *******************************
  */
-public class SignModuleInit implements Initializer {
+public class HomeModuleInit implements Initializer {
 
     @NonNull
     @Override
     public Object create(@NonNull Context context) {
-        KLog.d("sign组件初始化");
+        KLog.d("home组件初始化");
         return null;
     }
 
